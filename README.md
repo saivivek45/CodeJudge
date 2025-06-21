@@ -108,9 +108,6 @@ Here’s an example payload to add a problem (as admin):
   ]
 }
 ```
-
----
-
 ## 🛡 Security
 
 ✅ Code runs in Docker containers\
@@ -118,11 +115,6 @@ Here’s an example payload to add a problem (as admin):
 ✅ JWT-based auth
 
 ---
-
-## ✉ Submission
-
-Once done, submit via the given form:\
-👉 [Submission Form](https://forms.gle/LAvLWFmHRLXswwsx5)
 
 ---
 
