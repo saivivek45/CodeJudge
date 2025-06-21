@@ -33,7 +33,7 @@ A scalable **Node.js + Express** backend for a Coding Judge platform that secure
 ### 1️⃣ Clone repo
 
 ```bash
-git clone <YOUR_REPO_URL>
+git clone https://github.com/saivivek45/CodeJudge
 cd CodeJudge
 ```
 
