@@ -19,7 +19,7 @@ export const ListQuestions = async (req, res) => {
     return res.status(200).json({ success: true, data: all_problems });
 
   } catch (error) {
-    console.log(error);
+    console.error("Error in ListQuestions:", error);
     return res.status(500).json({ success: false, message: error.message });
   }
 };
@@ -36,7 +36,7 @@ export const singleQuestion = async (req, res) => {
 
     return res.status(200).json({ success: true, data: required_question });
   } catch (error) {
-    console.log(error);
+    console.error("Error in singleQuestion:", error);
     return res.status(500).json({ success: false, message: "Invalid question ID" });
   }
 };

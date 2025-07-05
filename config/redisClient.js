@@ -10,6 +10,7 @@ redisClient.on('error', (err) => {
   console.error('❌ Redis Error:', err)
 })
 
-await redisClient.connect()
+// Connect to Redis
+redisClient.connect().catch(console.error)
 
 export default redisClient
