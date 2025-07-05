@@ -1,6 +1,6 @@
 import express from 'express'
 import authMiddleware from '../middlewares/authMiddleware.js'
-import { getSubmissions, submitCode } from '../controllers/submissonController.js'
+import { getSubmissions, submitCode } from '../controllers/submissionController.js'
 
 
 
