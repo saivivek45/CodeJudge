@@ -11,9 +11,11 @@ import questionController from './routes/problemRoute.js'
 import adminRouter from './routes/adminProblemRoute.js'
 import submissionRouter from './routes/submissionRoutes.js'
 import router from './routes/leaderBoard.js'
+import botRouter from './routes/botRoute.js'
 import swaggerDocs from './swagger.js';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
+import { startBot } from './bot/botHandler.js';
 
 
 
@@ -73,10 +75,20 @@ app.use('/api/problems', questionController)
 app.use('/api/admin/problems', adminRouter)
 app.use('/api/code', submissionRouter)
 app.use('/api/leaderboard',router)
+app.use('/api/bot', botRouter)
 
 // ✅ Test route
 app.get('/', (req, res) => {
   res.send('API WORKING')
 })
 
-server.listen(port, () => console.log(`Server running on port ${port}`));
+server.listen(port, async () => {
+  console.log(`Server running on port ${port}`);
+  
+  // Start the Discord bot
+  try {
+    await startBot();
+  } catch (error) {
+    console.error('Failed to start bot:', error);
+  }
+});
