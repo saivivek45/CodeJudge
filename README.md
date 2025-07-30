@@ -13,6 +13,7 @@ A scalable **Node.js + Express** backend for a Coding Judge platform that secure
 ✅ **Rate Limiting (Redis + Express Rate-Limit)**\
 ✅ **Leaderboard (Top solvers)**\
 ✅ **WebSocket Real-time Submission Status (optional)**\
+✅ **Discord Bot Integration**\
 ✅ **Swagger API Docs**
 
 ---
@@ -45,14 +46,19 @@ npm install
 
 ### 3️⃣ Set up `.env`
 
-Create a `.env` file in the root:
+Create a `.env` file in the backend directory:
 
 ```
-PORT=3000
+PORT=3001
 MONGODB_URL=mongodb://localhost:27017/codejudge
 JWT_SECRET=your_jwt_secret
 JWT_EXPIRY=1d
 REDIS_URL=redis://localhost:6379
+
+# Discord Bot Configuration (Optional)
+DISCORD_BOT_TOKEN=your_discord_bot_token
+DISCORD_GUILD_ID=your_guild_id
+DISCORD_CHANNEL_ID=your_channel_id
 ```
 
 ### 4️⃣ Ensure Docker & Redis are running
@@ -79,7 +85,16 @@ node server.js
 ## 📌 API Docs
 
 Swagger UI available at:\
-[**http://localhost:3000/api-docs**](http://localhost:3000/api-docs)
+[**http://localhost:3001/api-docs**](http://localhost:3001/api-docs)
+
+## 🤖 Discord Bot
+
+The platform includes a Discord bot integration that allows users to:
+- Browse problems via Discord commands
+- View leaderboard and problem details
+- Receive real-time submission notifications
+
+For detailed bot setup instructions, see [BOT_SETUP.md](BOT_SETUP.md)
 
 ---
 
